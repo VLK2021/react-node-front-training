@@ -1,20 +1,22 @@
 import React, {useEffect, useState} from 'react';
 
+import {userService} from "../../services";
+
 
 const Users = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
-            .then(response => response.json())
-            .then(value => setUsers(value))
+        userService.getAll()
+            .then(value => setUsers(value.data))
             .catch(error => console.error(error));
     }, []);
+
 
     return (
         <div className={'users'}>
             {
-                users && users.map(user => <div key={user.id}>{user.name}</div>)
+                users && users.map(user => <div key={user.id}>{user.name}-{user.email}</div>)
             }
         </div>
     );

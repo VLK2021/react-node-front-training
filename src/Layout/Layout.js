@@ -11,6 +11,7 @@ const Layout = () => {
     return (
         <div className={'layout'}>
             <button onClick={()=>{navigate('/users')}}>users</button>
+            <button onClick={()=>{navigate('/create')}}>create user</button>
             <Outlet/>
         </div>
     );
