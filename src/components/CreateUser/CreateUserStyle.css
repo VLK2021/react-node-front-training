@@ -1,3 +1,71 @@
-.createUser{
-
+.createUser {
+    width: 100%;
+    padding: 1rem;
+    background: gainsboro;
 }
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form {
+    width: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+input {
+    width: 50%;
+    padding: 0.2rem;
+    margin: 0.5rem 0 1rem 0;
+    transition: 2s;
+}
+
+input:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.block {
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn > button {
+    padding: 0.3rem;
+    width: 50%;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background: blue;
+    color: snow;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.btn > button:hover{
+    transform: scale(1.1, 1.1);
+}
+
+

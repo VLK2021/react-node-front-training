@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 import {userService} from "../../services";
+import './UsersStyle.css';
+import User from "../User/User";
 
 
 const Users = () => {
@@ -16,7 +18,10 @@ const Users = () => {
     return (
         <div className={'users'}>
             {
-                users && users.map(user => <div key={user.id}>{user.name}-{user.email}</div>)
+                users && users.map(user => <User
+                    key={user.id}
+                    user={user}
+                />)
             }
         </div>
     );

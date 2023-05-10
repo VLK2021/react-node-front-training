@@ -4,6 +4,7 @@ import './App.css';
 import Layout from "./Layout/Layout";
 import Users from "./components/Users/Users";
 import CreateUser from "./components/CreateUser/CreateUser";
+import SingleUser from "./components/SingleUser/SingleUser";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'users'} element={<Users/>}/>
                     <Route path={'create'} element={<CreateUser/>}/>
+                    <Route path={'users/:id'} element={<SingleUser/>}/>
                 </Route>
             </Routes>
         </div>

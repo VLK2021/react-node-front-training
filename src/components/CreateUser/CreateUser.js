@@ -17,16 +17,16 @@ const CreateUser = () => {
     return (
         <div className={'createUser'}>
             <h1>Create User</h1>
-            <form onSubmit={handleSubmit(submit)}>
-                <label>Name: <input type="text" {...register('name')}/></label>
-                <label>LastName: <input type="text" {...register('lastName')}/></label>
-                <label>Age: <input type="number" {...register('age')}/></label>
-                <label>City: <input type="text" {...register('city')}/></label>
-                <label>Phone: <input type="text" {...register('phone')}/></label>
-                <label>Email: <input type="text" {...register('email')}/></label>
-                <label>Password: <input type="text" {...register('password')}/></label>
+            <form onSubmit={handleSubmit(submit)} className={'form'}>
+                <div className={'block'}><label>Name <input type="text" {...register('name')}/></label></div>
+                <div className={'block'}><label>LastName <input type="text" {...register('lastName')}/></label></div>
+                <div className={'block'}><label>Age <input type="number" {...register('age')}/></label></div>
+                <div className={'block'}><label>City <input type="text" {...register('city')}/></label></div>
+                <div className={'block'}><label>Phone <input type="text" {...register('phone')}/></label></div>
+                <div className={'block'}><label>Email <input type="text" {...register('email')}/></label></div>
+                <div className={'block'}><label>Password <input type="text" {...register('password')}/></label></div>
 
-                <div>
+                <div className={'btn'}>
                     <button>create</button>
                 </div>
             </form>
