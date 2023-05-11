@@ -1,3 +1,39 @@
-.singleUser{
+.singleUser {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.singleUser-inf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.popApp {
+    width: 50%;
+    padding: 0.5rem;
+    background: green;
+    margin: 0 auto;
+}
+
+.singleUser > button {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    color: snow;
+    background: blue;
+    transition: 2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.singleUser > button:hover {
+    transform: scale(0.9, 0.9);
 }
