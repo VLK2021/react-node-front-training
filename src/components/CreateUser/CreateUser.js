@@ -9,8 +9,19 @@ const CreateUser = () => {
     const {register, handleSubmit, reset} = useForm();
 
     const submit = async (data) => {
-        await userService.createUs(data)
-        reset();
+        try {
+            await userService.createUs(data)
+                .then(response => {
+                    if (response.data) {
+                        alert('User was created!')
+                    }
+                })
+
+            reset();
+        } catch (e) {
+            console.error(e.message);
+        }
+
     }
 
 

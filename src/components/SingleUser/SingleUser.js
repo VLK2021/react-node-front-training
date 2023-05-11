@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {useLocation} from "react-router-dom";
+import {useForm} from "react-hook-form";
 
 import {userService} from "../../services";
 import './SingleUserStyle.css';
-import {useForm} from "react-hook-form";
 
 
 const SingleUser = () => {
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const {register, handleSubmit, reset} = useForm();
 
     const location = useLocation();
@@ -16,12 +16,24 @@ const SingleUser = () => {
 
     const deleteUser = async () => {
         // await fetch(`http://localhost:5000/users/${id}`, {method:'DELETE'})
-        await userService.deleteUser(id);
+        await userService.deleteUser(id)
+            .then(response => {
+                if (response.data) {
+                    alert('User was deleted!')
+                }
+            })
+            .catch(error => console.error(error));
     }
 
     const submit = async (data) => {
         const {email, password, city} = data;
-        await userService.updateUser(id, {email, password, city});
+        await userService.updateUser(id, {email, password, city})
+            .then(response => {
+                if (response.data) {
+                    alert('User was updated!')
+                }
+            })
+            .catch(error => console.error(error));
         reset();
     }
 
