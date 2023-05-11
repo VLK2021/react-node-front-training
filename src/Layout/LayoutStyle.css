@@ -1,3 +1,18 @@
-.layout{
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    background: gainsboro;
+}
 
+.layout > button {
+    width: 20%;
+    background: blue;
+    color: snow;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.4rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem black;
+    margin: 1rem;
+    cursor: pointer;
 }
