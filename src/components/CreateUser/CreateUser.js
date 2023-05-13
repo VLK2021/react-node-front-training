@@ -1,15 +1,15 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {joiResolver} from "@hookform/resolvers/joi";
 
 import './CreateUserStyle.css';
 import {userService} from "../../services";
+import {joiResolver} from "@hookform/resolvers/joi";
 import {createUserValidator} from "../validators/createUserValidator";
 
 
 const CreateUser = () => {
-    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({
-        mode: 'all',
+    const {register, handleSubmit, reset, formState: {errors}} = useForm({
+        mode:'onTouched',
         resolver: joiResolver(createUserValidator)
     });
 
@@ -44,10 +44,11 @@ const CreateUser = () => {
                 <div className={'block'}><label>Phone <input type="text" {...register('phone')}/></label></div>
                 {errors.phone && <span>{errors.phone.message}</span>}
                 <div className={'block'}><label>Email <input type="text" {...register('email')}/></label></div>
+                {errors.email && <span>{errors.email.message}</span>}
                 <div className={'block'}><label>Password <input type="text" {...register('password')}/></label></div>
 
                 <div className={'btn'}>
-                    <button disabled={!isValid}>create</button>
+                    <button>create</button>
                 </div>
             </form>
         </div>

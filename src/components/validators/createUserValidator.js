@@ -2,7 +2,6 @@ import Joi from 'joi';
 
 
 const createUserValidator = Joi.object({
-
     name: Joi.string().required().regex(/^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/).message({
         'string.pattern.base': 'Тільки букви від 1 до 20 символів'
     }),
@@ -18,14 +17,15 @@ const createUserValidator = Joi.object({
     phone: Joi.string().required().pattern(/^\+[1-9]\d{1,14}$/).message({
         'string.pattern.base': 'Неправильний формат номеру телефону'
     }),
-    // email: Joi.string().email().required().message({
-    //     'string.email': 'Неверный формат адреса электронной почты'
-    // }),
+    email: Joi.string().required().regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).message({
+        'string.pattern.base': 'Неверный формат адреса электронной почты'
+    }),
     // password: Joi.string().min(8).max(30).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).required().message({
     //     'string.min': 'Пароль повинен містити не менше 8 символів',
     //     'string.max': 'Пароль не помвинен містити більше 30 символів',
     //     'string.pattern.base': 'Пароль повинен містити хоча б обну велику літеру одну малу та одну цифру'
     // }),
+    password:Joi.required()
 
 })
 
