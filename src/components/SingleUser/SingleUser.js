@@ -15,7 +15,13 @@ const SingleUser = () => {
     const {id, name, email, city} = user;
 
     const deleteUser = async () => {
-        // await fetch(`http://localhost:5000/users/${id}`, {method:'DELETE'})
+        // await fetch(`http://localhost:5000/users/${id}`, {method: 'DELETE'})
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     });
         await userService.deleteUser(id)
             .then(response => {
                 if (response.data) {
